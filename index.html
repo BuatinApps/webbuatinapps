@@ -1,234 +1,240 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>buatinApps - Jasa Pembuatan Aplikasi</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f5fa;
-      color: #333;
-    }
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 220px;
-      height: 100vh;
-      background-color: #4e2edf;
-      padding: 20px;
-      color: white;
-      transition: all 0.3s ease;
-      animation: slideIn 0.8s ease-out;
-    }
-    @keyframes slideIn {
-      from {
-        transform: translateX(-100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    .sidebar h2 {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
-    .sidebar a {
-      display: block;
-      margin-bottom: 20px;
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      position: relative;
-    }
-    .sidebar a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 2px;
-      background: white;
-      transition: width 0.3s ease;
-    }
-    .sidebar a:hover::after {
-      width: 100%;
-    }
-    .main {
-      margin-left: 240px;
-      padding: 40px;
-    }
-    .hero {
-      background-color: #ebe8fc;
-      padding: 60px 40px;
-      border-radius: 12px;
-      text-align: center;
-      animation: fadeIn 1s ease-in;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .hero h1 {
-      font-size: 36px;
-      color: #4e2edf;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 18px;
-    }
-    .apps-section, .cards {
-      margin-top: 60px;
-    }
-    .cards {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .card {
-      background-color: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      padding: 20px;
-      flex: 1;
-      min-width: 250px;
-      max-width: 300px;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-    }
-    .card-icon {
-      font-size: 32px;
-      background-color: #4e2edf;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 16px;
-    }
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      text-align: center;
-      color: #888;
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 16px;
-      background: #4e2edf;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: transform 0.3s ease, background 0.3s;
-    }
-    a.button:hover {
-      transform: scale(1.05);
-      background: #371dcd;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buatinApps - Jasa Pembuatan Aplikasi</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5fa;
+            color: #333;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 220px;
+            height: 100vh;
+            background-color: #4e2edf;
+            padding: 20px;
+            color: white;
+            transition: all 0.3s ease;
+            animation: slideIn 0.8s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .sidebar h2 {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        .sidebar a {
+            display: block;
+            margin-bottom: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+        }
+        .sidebar a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+        .sidebar a:hover::after {
+            width: 100%;
+        }
+        .main {
+            margin-left: 240px;
+            padding: 40px;
+        }
+        .hero {
+            background-color: #ebe8fc;
+            padding: 60px 40px;
+            border-radius: 12px;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero h1 {
+            font-size: 36px;
+            color: #4e2edf;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 18px;
+        }
+        .apps-section, .cards {
+            margin-top: 60px;
+        }
+        .cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+        }
+        .card-icon {
+            font-size: 32px;
+            background-color: #4e2edf;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            text-align: center;
+            color: #888;
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 16px;
+            background: #4e2edf;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.3s ease, background 0.3s;
+        }
+        a.button:hover {
+            transform: scale(1.05);
+            background: #371dcd;
+        }
 
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        padding: 10px 20px;
-      }
-      .sidebar h2, .sidebar a {
-        display: inline-block;
-        margin-right: 20px;
-        margin-bottom: 10px;
-      }
-      .main {
-        margin-left: 0;
-        padding: 20px;
-      }
-      .cards {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 10px 20px;
+            }
+            .sidebar h2, .sidebar a {
+                display: inline-block;
+                margin-right: 20px;
+                margin-bottom: 10px;
+            }
+            .main {
+                margin-left: 0;
+                padding: 20px;
+            }
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="sidebar">
-    <h2>buatinApps</h2>
-    <a href="#">Home</a>
-    <a href="#harga">Harga</a>
-    <a href="https://wa.me/6285156455878" target="_blank">Kontak</a>
-  </div>
-  <div class="main">
-    <div class="hero">
-      <h1>Jasa Pembuatan Aplikasi</h1>
-      <p>Khusus untuk UMKM, RT, Owner Kos, dan lainnya.</p>
+    <div class="sidebar">
+        <h2>buatinApps</h2>
+        <a href="#">Home</a>
+        <a href="#harga">Harga</a>
+        <a href="https://wa.me/6285156455878" target="_blank">Kontak</a>
     </div>
-
-    <section id="harga" class="apps-section">
-      <h2>Paket Harga</h2>
-      <p>Pilih paket yang sesuai kebutuhan kamu</p>
-
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">💼</div>
-          <h3>Basic</h3>
-          <p>Pembelian aplikasi yang sudah tersedia</p>
-          <p><strong>Rp49.000</strong></p>
+    <div class="main">
+        <div class="hero">
+            <h1>Jasa Pembuatan Aplikasi</h1>
+            <p>Khusus untuk UMKM, RT, Owner Kos, dan lainnya.</p>
         </div>
 
-        <div class="card">
-          <div class="card-icon">🛠️</div>
-          <h3>Basic+</h3>
-          <p>Pembuatan aplikasi berdasarkan jasa yang kamu butuhkan</p>
-          <p><strong>Rp99.000 – Rp199.000</strong></p>
-        </div>
+        <section id="harga" class="apps-section">
+            <h2>Paket Harga</h2>
+            <p>Pilih paket yang sesuai kebutuhan kamu</p>
 
-        <div class="card">
-          <div class="card-icon">💬</div>
-          <h3>Custom</h3>
-          <p>Konsultasi dulu via WhatsApp untuk kebutuhan spesifik</p>
-          <p><strong>Chat untuk diskusi</strong></p>
-        </div>
-      </div>
-    </section>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">💼</div>
+                    <h3>Basic</h3>
+                    <p>Pembelian aplikasi yang sudah tersedia</p>
+                    <p><strong>Rp49.000</strong></p>
+                </div>
 
-    <section class="apps-section">
-      <h2 style="margin-top: 60px;">Contoh Aplikasi Buatan Kami</h2>
-      <p>Aplikasi real yang bisa langsung dicoba atau dijadikan referensi</p>
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">🏠</div>
-          <h3>Tagihan Kos</h3>
-          <p>Aplikasi penagihan kontrakan otomatis setiap bulan.</p>
-          <a href="https://buatinapps.github.io/tagihankos/" class="button" target="_blank">Coba Sekarang</a>
-        </div>
-        <div class="card">
-          <div class="card-icon">💰</div>
-          <h3>Iuran Warga</h3>
-          <p>Untuk RT/RW yang ingin membuat sistem iuran warga bulanan.</p>
-          <a href="https://buatinapps.github.io/iuran/" class="button" target="_blank">Coba Sekarang</a>
-        </div>
-        <div class="card">
-          <div class="card-icon">☕</div>
-          <h3>Kopi Babe</h3>
-          <p>Sistem POS sederhana untuk warung kopi atau UMKM kecil.</p>
-          <a href="https://buatinapps.github.io/kopibabeh/" class="button" target="_blank">Coba Sekarang</a>
-        </div>
-      </div>
-    </section>
+                <div class="card">
+                    <div class="card-icon">🛠️</div>
+                    <h3>Basic+</h3>
+                    <p>Pembuatan aplikasi berdasarkan jasa yang kamu butuhkan</p>
+                    <p><strong>Rp99.000 – Rp199.000</strong></p>
+                </div>
 
-    <footer>
-      &copy; 2025 buatinApps. All rights reserved.
-    </footer>
-  </div>
+                <div class="card">
+                    <div class="card-icon">💬</div>
+                    <h3>Custom</h3>
+                    <p>Konsultasi dulu via WhatsApp untuk kebutuhan spesifik</p>
+                    <p><strong>Chat untuk diskusi</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="apps-section">
+            <h2 style="margin-top: 60px;">Contoh Aplikasi Buatan Kami</h2>
+            <p>Aplikasi real yang bisa langsung dicoba atau dijadikan referensi</p>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">🏠</div>
+                    <h3>Tagihan Kos</h3>
+                    <p>Aplikasi penagihan kontrakan otomatis setiap bulan.</p>
+                    <a href="https://buatinapps.github.io/tagihankos/" class="button" target="_blank">Coba Sekarang</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💰</div>
+                    <h3>Iuran Warga</h3>
+                    <p>Untuk RT/RW yang ingin membuat sistem iuran warga bulanan.</p>
+                    <a href="https://buatinapps.github.io/iuran/" class="button" target="_blank">Coba Sekarang</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">☕</div>
+                    <h3>Kopi Babe</h3>
+                    <p>Sistem POS sederhana untuk warung kopi atau UMKM kecil.</p>
+                    <a href="https://buatinapps.github.io/kopibabeh/" class="button" target="_blank">Coba Sekarang</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛵</div>
+                    <h3>Sewa Motor</h3>
+                    <p>Platform untuk menyewakan berbagai jenis motor dengan mudah.</p>
+                    <a href="https://buatinapps.github.io/sewamotor/" class="button" target="_blank">Coba Sekarang</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2025 buatinApps. All rights reserved.
+        </footer>
+    </div>
 </body>
 </html>
