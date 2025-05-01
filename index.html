@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>buatinApps - Jasa Pembuatan Aplikasi</title>
     <style>
         body {
@@ -11,6 +11,7 @@
             background: #f5f5fa;
             color: #333;
         }
+
         .sidebar {
             position: fixed;
             top: 0;
@@ -23,6 +24,7 @@
             transition: all 0.3s ease;
             animation: slideIn 0.8s ease-out;
         }
+
         @keyframes slideIn {
             from {
                 transform: translateX(-100%);
@@ -33,10 +35,12 @@
                 opacity: 1;
             }
         }
+
         .sidebar h2 {
             font-size: 20px;
             margin-bottom: 30px;
         }
+
         .sidebar a {
             display: block;
             margin-bottom: 20px;
@@ -45,6 +49,7 @@
             font-weight: 500;
             position: relative;
         }
+
         .sidebar a::after {
             content: '';
             position: absolute;
@@ -55,40 +60,87 @@
             background: white;
             transition: width 0.3s ease;
         }
+
         .sidebar a:hover::after {
             width: 100%;
         }
+
         .main {
             margin-left: 240px;
             padding: 40px;
         }
+
         .hero {
             background-color: #ebe8fc;
-            padding: 60px 40px;
+            padding: 40px;
             border-radius: 12px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 40px;
             animation: fadeIn 1s ease-in;
         }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
         .hero h1 {
-            font-size: 36px;
+            font-size: 28px;
             color: #4e2edf;
-            margin-bottom: 10px;
+            margin-bottom: 16px;
+            line-height: 1.3;
         }
+
         .hero p {
-            font-size: 18px;
+            font-size: 16px;
+            margin-bottom: 20px;
         }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .benefit-item::before {
+            content: "✔";
+            color: #4e2edf;
+            font-weight: bold;
+        }
+
         .apps-section, .cards {
             margin-top: 60px;
         }
+
         .cards {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
         }
+
         .card {
             background-color: white;
             border-radius: 16px;
@@ -100,9 +152,11 @@
             text-align: center;
             transition: transform 0.3s ease;
         }
+
         .card:hover {
             transform: translateY(-8px);
         }
+
         .card-icon {
             font-size: 32px;
             background-color: #4e2edf;
@@ -115,22 +169,26 @@
             justify-content: center;
             margin: 0 auto 16px;
         }
+
         footer {
             margin-top: 60px;
             padding: 20px;
             text-align: center;
             color: #888;
         }
+
         a.button {
             display: inline-block;
             margin-top: 12px;
-            padding: 10px 16px;
+            padding: 12px 24px;
             background: #4e2edf;
             color: white;
             border-radius: 8px;
             text-decoration: none;
             transition: transform 0.3s ease, background 0.3s;
+            font-weight: 600;
         }
+
         a.button:hover {
             transform: scale(1.05);
             background: #371dcd;
@@ -143,20 +201,104 @@
                 width: 100%;
                 height: auto;
                 padding: 10px 20px;
+                text-align: center; /* Center align links in mobile view */
             }
             .sidebar h2, .sidebar a {
                 display: inline-block;
-                margin-right: 20px;
+                margin-right: 15px; /* Adjust spacing for inline links */
                 margin-bottom: 10px;
             }
             .main {
                 margin-left: 0;
                 padding: 20px;
             }
+            .hero {
+                flex-direction: column;
+                padding: 30px 20px;
+                text-align: center; /* Center align hero content in mobile view */
+            }
+            .hero-content {
+                text-align: center;
+            }
+            .hero-image {
+                order: -1;
+                margin-bottom: 20px;
+            }
+            .benefits {
+                grid-template-columns: 1fr;
+            }
             .cards {
                 flex-direction: column;
                 align-items: center;
             }
+        }
+
+        /* Styles for the testimonial section */
+        .testimonial-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1200px;
+            padding: 40px 20px; /* Add padding for better spacing on smaller screens */
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.8); /* Make background slightly opaque and light */
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+            color: #333; /* Ensure text is readable on the light background */
+        }
+        .testimonial-container h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            color: #4e2edf; /* Use a dark color for better contrast */
+            text-align: center;
+        }
+        .testimonial-container h2 {
+            font-size: 18px;
+            font-weight: normal;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #555; /* Use a dark color for better contrast */
+        }
+        .quote {
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-size: 16px;
+            text-align: center;
+            color: #333; /* Ensure text is readable */
+        }
+        .author {
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+            color: #333; /* Ensure text is readable */
+        }
+        .role {
+            font-size: 14px;
+            opacity: 0.8;
+            text-align: center;
+            color: #555; /* Use a dark color for better contrast */
+        }
+        .options-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .option-title {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333; /* Ensure text is readable */
         }
     </style>
 </head>
@@ -167,14 +309,31 @@
         <a href="#harga">Harga</a>
         <a href="https://wa.me/6285156455878" target="_blank">Kontak</a>
     </div>
+
     <div class="main">
         <div class="hero">
-            <h1>Jasa Pembuatan Aplikasi</h1>
-            <p>Khusus untuk UMKM, RT, Owner Kos, dan lainnya.</p>
+            <div class="hero-content">
+                <h1>Wujudkan Aplikasi Impianmu dengan BuatinApps</h1>
+                <p>Solusi digital untuk UMKM yang ingin maju dan berkembang di era modern</p>
+
+                <div class="benefits">
+                    <div class="benefit-item">Cepat & Efisien - Siap pakai dalam hitungan hari</div>
+                    <div class="benefit-item">Harga Terjangkau - Khusus untuk UMKM</div>
+                    <div class="benefit-item">Customizable - Sesuai kebutuhan bisnis Anda</div>
+                    <div class="benefit-item">Dukungan Penuh - Bimbingan sampai lancar</div>
+                </div>
+
+                <a href="#" class="button">Konsultasi Gratis Sekarang!</a>
+            </div>
+
+            <div class="hero-image">
+                <img src="images/project 1.png" alt="Aplikasi Mobile BuatinApps" />
+            </div>
         </div>
 
+
         <section id="harga" class="apps-section">
-            <h2>Paket Harga</h2>
+            <h2 style="font-weight: bold;">Paket Harga</h2>
             <p>Pilih paket yang sesuai kebutuhan kamu</p>
 
             <div class="cards">
@@ -232,20 +391,100 @@
                 <div class="card">
                     <div class="card-icon">🎮</div>
                     <h3>Tebak Game</h3>
-                    <p>aplikasi tebak game sederhana.</p>
+                    <p>Contoh aplikasi tebak game sederhana.</p>
                     <a href="https://buatinapps.github.io/tebakgame/" class="button" target="_blank">Coba Sekarang</a>
                 </div>
-                <div class="card">
-                    <div class="card-icon">🧩</div>
-                    <h3>Menyusun Kata</h3>
-                    <p>aplikasi menyusun kata sederhana.</p>
-                    <a href="https://buatinapps.github.io/menyusunkata/" class="button" target="_blank">Coba Sekarang</a>
+            </div>
+        </section>
+
+        <section class="apps-section">
+            <h2>Masih Pakai Cara Manual? Saingan Sudah Go Digital!</h2>
+            <p>Bisnis UMKM sering terkendala:</p>
+            <ul>
+                <li>Transaksi terbatas karena bergantung pada tatap muka/lokasi</li>
+                <li>Manajemen pesanan ribet, catatan manual rawan error</li>
+                <li>Kurang profesional di mata pelanggan</li>
+            </ul>
+            <p>BuatinApps hadir untuk menjawab itu semua!</p>
+            <p>Aplikasi custom siap bantu:</p>
+            <ul>
+                <li>→ Tingkatkan penjualan dengan kemudahan transaksi online</li>
+                <li>→ Kelola bisnis lebih rapi - pesanan, stok, dan pembayaran dalam satu sistem</li>
+                <li>→ Tampil modern dengan aplikasi branded milikmu sendiri!</li>
+            </ul>
+        </section>
+
+        <section class="testimonial-container">
+            <h1>#buatinApps</h1>
+            <h2>What Our Customers Says...</h2>
+
+            <div class="options-container">
+                <div class="testimonial-card">
+                    <div class="quote">
+                        "Dengan BuatinApps, bikin aplikasi impian jadi kenyataan! Kita beneran bisa request pembuatan sesuai kebutuhan, dan yang paling penting, harganya terjangkau banget buat UMKM kayak kita."
+                    </div>
+                    <div class="author">Budi Santoso</div>
+                    <div class="role">Pemilik Warung Makan</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote">
+                        "BuatinApps ini keren! Aplikasi kita persis seperti yang kita mau karena memang bisa request pembuatan custom. Kirain mahal, eh ternyata harganya terjangkau, pas di kantong!"
+                    </div>
+                    <div class="author">Ani Wijaya</div>
+                    <div class="role">Pemilik
+                      Toko Kelontong</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote">
+                        "Cari aplikasi yang bisa request sesuai maumu dan harganya terjangkau? BuatinApps solusinya!"
+                    </div>
+                    <div class="author">Dewi Kurnia</div>
+                    <div class="role">Pemilik Laundry</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote">
+                        "Puas banget sama aplikasi dari BuatinApps! Proses request pembuatannya gampang, hasilnya sesuai harapan, dan harganya terjangkau untuk bisnis kecil."
+                    </div>
+                    <div class="author">Rudi Hartono</div>
+                    <div class="role">Pemilik Bengkel</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote">
+                        "Gak nyangka bikin aplikasi semudah ini! Di BuatinApps, kita bisa request pembuatan apa aja, dan harganya terjangkau. Sekarang pelanggan makin gampang order lewat aplikasi kita sendiri."
+                    </div>
+                    <div class="author">Siti Aminah</div>
+                    <div class="role">Pemilik Catering</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="apps-section">
+          <h2>Jangan Ketinggalan Zaman - Percayakan Aplikasinya pada Kami!</h2>
+          <a href="https://wa.me/6285156455878" class="button" target="_blank">Hubungi via WhatsApp</a>
+      </section>
+
+        <section class="apps-section">
+            <h2>🔥 Promo 10% untuk 10 Pendaftar Pertama Bulan Ini! 🔥</h2>
+        </section>
+
+        <section class="apps-section" id="pembayaran">
+            <h2>Pembayaran</h2>
+            <p>Silakan lakukan pembayaran ke rekening berikut setelah memilih paket:</p>
+            <div style="display: flex; align-items: center; gap: 12px; background: white; padding: 16px; border-radius: 12px; max-width: 400px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+                <img src="logo-jago.svg" alt="Jenius Logo" style="height: 40px;" />
+                <div>
+                    <strong>Rek. Jenius (BTPN)</strong><br />
+                    <code style="font-size: 18px;">506060662783</code>
                 </div>
             </div>
         </section>
 
         <footer>
-            &copy; 2025 buatinApps. All rights reserved.
+            BuatinApps - Teman Setiap UMKM Menuju Bisnis Digital yang Sukses! &copy; 2025 buatinApps. All rights reserved.
         </footer>
     </div>
 </body>
